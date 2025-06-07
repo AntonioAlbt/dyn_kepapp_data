@@ -1,5 +1,4 @@
-<!--
-// dyn_kepapp_data: service for providing dynamic data to the Kepler-App
+// dyn_kepapp_data: service for uploading logs
 // Copyright (c) 2025 Antonio Albert
 
 // This file is part of dyn_kepapp_data.
@@ -31,20 +30,31 @@
 
 // Sie sollten eine Kopie der GNU General Public License zusammen mit
 // dyn_kepapp_data erhalten haben. Wenn nicht, siehe <https://www.gnu.org/licenses/>.
--->
 
-<svelte:head>
-    <title>Server für dynamische Kepler-App-Daten</title>
-</svelte:head>
+import { LATEST_KEPLER_APP_VERSION_CODE, LATEST_KEPLER_APP_VERSION_NAME, npm_package_version } from "$env/static/private"
+import { json } from "@sveltejs/kit"
+import { parse as semverParse } from "semver"
 
-<div class="card shadow-lg m-4 w-fit">
-    <div class="card-body">
-        <h2 class="text-lg font-bold">Server für dynamische Kepler-App-Daten</h2>
-        <p>
-            Dienst für Bereitstellung von dynamischen Daten für die Kepler-App
-        </p>
-        <p>
-            <a href="/impressum" class="link">Impressum</a> | <a href="/datenschutz" class="link">Datenschutz</a>
-        </p>
-    </div>
-</div>
+export async function GET() {
+    const ver = semverParse(npm_package_version)
+    return json(
+        {
+            service: "dyn_kepapp_data",
+            version: {
+                string: npm_package_version,
+                major: ver?.major,
+                minor: ver?.minor,
+                patch: ver?.patch
+            },
+            app_version: {
+                name: LATEST_KEPLER_APP_VERSION_NAME,
+                code: Number(LATEST_KEPLER_APP_VERSION_CODE)
+            },
+            services: {
+                sommerfest: {
+                    available: true
+                }
+            }
+        }
+    )
+}

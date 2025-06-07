@@ -1,5 +1,5 @@
 <!--
-// dyn_kepapp_data: service for providing dynamic data to the Kepler-App
+// dyn_kepapp_data: service for uploading logs
 // Copyright (c) 2025 Antonio Albert
 
 // This file is part of dyn_kepapp_data.
@@ -33,18 +33,25 @@
 // dyn_kepapp_data erhalten haben. Wenn nicht, siehe <https://www.gnu.org/licenses/>.
 -->
 
+<script>
+
+    import { PUBLIC_RESPONSIBLE_FOR_WEBSITE_HTML } from "$env/static/public";
+
+</script>
 <svelte:head>
-    <title>Server für dynamische Kepler-App-Daten</title>
+    <title>Impressum | Dyn. Kepler-App-Daten</title>
 </svelte:head>
 
 <div class="card shadow-lg m-4 w-fit">
     <div class="card-body">
-        <h2 class="text-lg font-bold">Server für dynamische Kepler-App-Daten</h2>
+        <h2 class="text-lg font-bold">Impressum</h2>
         <p>
-            Dienst für Bereitstellung von dynamischen Daten für die Kepler-App
+            <a href="/" class="link">Zurück</a>
         </p>
+        <p>Angaben gemäß § 5 TMG:</p>
+
         <p>
-            <a href="/impressum" class="link">Impressum</a> | <a href="/datenschutz" class="link">Datenschutz</a>
+            {@html PUBLIC_RESPONSIBLE_FOR_WEBSITE_HTML}
         </p>
     </div>
 </div>
