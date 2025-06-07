@@ -37,9 +37,9 @@
             "balken": {
                 "beschriftung": "Eröffnung auf dem Schulhof",
                 "farbe": "rot",
-                "länge": 2,
-                "times": { "start": "15:20", "end": "15:40" }
-            }
+                "länge": 2
+            },
+            "times": { "start": "15:20", "end": "15:40" }
         },
         {
             "typ": "vertikal",
@@ -159,36 +159,36 @@
             "balken": {
                 "beschriftung": "Special auf dem Schulhof",
                 "farbe": "rot",
-                "länge": 2,
-                "times": { "start": "21:40", "end": "22:00" }
-            }
+                "länge": 2
+            },
+            "times": { "start": "21:40", "end": "22:00" }
         },
         {
             "typ": "horizontal",
             "balken": {
                 "beschriftung": "Schulhaus[BREAK]pflicht",
                 "farbe": "KeplerBlau",
-                "länge": 6,
-                "times": { "start": "22:00", "end": "23:00" }
-            }
+                "länge": 6
+            },
+            "times": { "start": "22:00", "end": "23:00" }
         },
         {
             "typ": "horizontal",
             "balken": {
                 "beschriftung": "Zimmerpflicht",
                 "farbe": "KeplerBlau",
-                "länge": 3,
-                "times": { "start": "23:00", "end": "06:00" }
-            }
+                "länge": 3
+            },
+            "times": { "start": "23:00", "end": "06:00" }
         },
         {
             "typ": "horizontal",
             "balken": {
                 "beschriftung": "Aufräumen",
                 "farbe": "KeplerGelb",
-                "länge": 3,
-                "times": { "start": "06:00", "end": "07:00" }
-            }
+                "länge": 3
+            },
+            "times": { "start": "06:00", "end": "07:00" }
         },
         {
             "typ": "horizontal",
