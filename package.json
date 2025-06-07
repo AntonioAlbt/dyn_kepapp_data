@@ -25,6 +25,7 @@
 	},
 	"dependencies": {
 		"daisyui": "^5.0.43",
-		"semver": "^7.7.2"
+		"semver": "^7.7.2",
+		"svelte-adapter-bun": "^0.5.2"
 	}
 }
