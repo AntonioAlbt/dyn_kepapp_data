@@ -29,14 +29,16 @@
                 "beschriftung": "Einlass und Anmeldung [BREAK]ab 14:20 Uhr",
                 "farbe": "KeplerGelb",
                 "länge": 5
-            }
+            },
+            "times": { "start": "14:20", "end": "15:20" }
         },
         {
             "typ": "horizontal",
             "balken": {
                 "beschriftung": "Eröffnung auf dem Schulhof",
                 "farbe": "rot",
-                "länge": 2
+                "länge": 2,
+                "times": { "start": "15:20", "end": "15:40" }
             }
         },
         {
@@ -53,22 +55,26 @@
                         {
                             "beschriftung": "Work[BREAK]shop (60 min)",
                             "farbe": "KeplerOrange",
-                            "länge": 6
+                            "länge": 6,
+                            "times": { "start": "16:00", "end": "17:00" }
                         },
                         {
                             "beschriftung": "Essen 1",
                             "farbe": "KeplerBlau",
-                            "länge": 12
+                            "länge": 12,
+                            "times": { "start": "17:00", "end": "19:00" }
                         },
                         {
                             "beschriftung": "Hoch[BREAK]sprung[BREAK]turnier Klassen 5-7",
                             "farbe": "KeplerOrange",
-                            "länge": 6
+                            "länge": 6,
+                            "times": { "start": "19:00", "end": "20:00" }
                         },
                         {
                             "beschriftung": "Hoch[BREAK]sprung[BREAK]turnier Klassen 8-12",
                             "farbe": "KeplerOrange",
-                            "länge": 10
+                            "länge": 10,
+                            "times": { "start": "20:00", "end": "21:40" }
                         }
                     ],
                     [
@@ -80,12 +86,14 @@
                         {
                             "beschriftung": "Work[BREAK]shop (90 min)",
                             "farbe": "KeplerOrange",
-                            "länge": 9
+                            "länge": 9,
+                            "times": { "start": "16:00", "end": "17:30" }
                         },
                         {
                             "beschriftung": "Essen 2",
                             "farbe": "KeplerBlau",
-                            "länge": 9
+                            "länge": 9,
+                            "times": { "start": "17:30", "end": "19:00" }
                         },
                         {
                             "beschriftung": "",
@@ -95,14 +103,16 @@
                         {
                             "beschriftung": "Finale der Darts[BREAK]meister[BREAK]schaft",
                             "farbe": "KeplerGelb",
-                            "länge": 8
+                            "länge": 8,
+                            "times": { "start": "20:15", "end": "21:40" }
                         }
                     ],
                     [
                         {
                             "beschriftung": "Volley[BREAK]ball[BREAK]turnier",
                             "farbe": "KeplerGelb",
-                            "länge": 14
+                            "länge": 14,
+                            "times": { "start": "15:40", "end": "18:00" }
                         },
                         {
                             "beschriftung": "",
@@ -112,19 +122,22 @@
                         {
                             "beschriftung": "Kepler[BREAK]nale",
                             "farbe": "KeplerGelb",
-                            "länge": 6
+                            "länge": 6,
+                            "times": { "start": "19:00", "end": "20:00" }
                         },
                         {
                             "beschriftung": "Skat[BREAK]turnier",
                             "farbe": "KeplerOrange",
-                            "länge": 10
+                            "länge": 10,
+                            "times": { "start": "20:00", "end": "21:40" }
                         }
                     ],
                     [
                         {
                             "beschriftung": "Musik auf dem Schulhof",
                             "farbe": "KeplerOrange",
-                            "länge": 28
+                            "länge": 28,
+                            "times": { "start": "15:40", "end": "20:20" }
                         },
                         {
                             "beschriftung": "",
@@ -134,7 +147,8 @@
                         {
                             "beschriftung": "Abholung",
                             "farbe": "KeplerBlau",
-                            "länge": 4
+                            "länge": 4,
+                            "times": { "start": "21:00", "end": "21:40" }
                         }
                     ]
                 ]
@@ -145,7 +159,8 @@
             "balken": {
                 "beschriftung": "Special auf dem Schulhof",
                 "farbe": "rot",
-                "länge": 2
+                "länge": 2,
+                "times": { "start": "21:40", "end": "22:00" }
             }
         },
         {
@@ -153,7 +168,8 @@
             "balken": {
                 "beschriftung": "Schulhaus[BREAK]pflicht",
                 "farbe": "KeplerBlau",
-                "länge": 6
+                "länge": 6,
+                "times": { "start": "22:00", "end": "23:00" }
             }
         },
         {
@@ -161,7 +177,8 @@
             "balken": {
                 "beschriftung": "Zimmerpflicht",
                 "farbe": "KeplerBlau",
-                "länge": 3
+                "länge": 3,
+                "times": { "start": "23:00", "end": "06:00" }
             }
         },
         {
@@ -169,7 +186,8 @@
             "balken": {
                 "beschriftung": "Aufräumen",
                 "farbe": "KeplerGelb",
-                "länge": 3
+                "länge": 3,
+                "times": { "start": "06:00", "end": "07:00" }
             }
         },
         {
