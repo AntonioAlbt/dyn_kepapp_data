@@ -45,14 +45,18 @@ export async function GET({ url }) {
     let appVer: { name: string, code: number };
     if (deviceData.app.code >= 86) {
         switch (deviceData.os.type) {
-            case "ios": appVer = {
-                name: LATEST_KEPLER_APP_VERSION_NAME_IOS,
-                code: Number(LATEST_KEPLER_APP_VERSION_CODE_IOS),
-            };
-            case "android": appVer = {
-                name: LATEST_KEPLER_APP_VERSION_NAME_ANDROID,
-                code: Number(LATEST_KEPLER_APP_VERSION_CODE_ANDROID),
-            };
+            case "ios":
+                appVer = {
+                    name: LATEST_KEPLER_APP_VERSION_NAME_IOS,
+                    code: Number(LATEST_KEPLER_APP_VERSION_CODE_IOS),
+                };
+                break;
+            case "android":
+                appVer = {
+                    name: LATEST_KEPLER_APP_VERSION_NAME_ANDROID,
+                    code: Number(LATEST_KEPLER_APP_VERSION_CODE_ANDROID),
+                };
+                break;
             default: appVer = { name: deviceData.app.version ?? LATEST_KEPLER_APP_VERSION_NAME_ANDROID, code: deviceData.app.code };
         }
     } else {
