@@ -31,12 +31,36 @@
 // Sie sollten eine Kopie der GNU General Public License zusammen mit
 // dyn_kepapp_data erhalten haben. Wenn nicht, siehe <https://www.gnu.org/licenses/>.
 
-import { LATEST_KEPLER_APP_VERSION_CODE, LATEST_KEPLER_APP_VERSION_NAME, npm_package_version } from "$env/static/private"
+import { LATEST_KEPLER_APP_VERSION_CODE_ANDROID, LATEST_KEPLER_APP_VERSION_CODE_IOS, LATEST_KEPLER_APP_VERSION_NAME_ANDROID, LATEST_KEPLER_APP_VERSION_NAME_IOS, npm_package_version } from "$env/static/private"
 import { json } from "@sveltejs/kit"
 import { parse as semverParse } from "semver"
 
-export async function GET() {
-    const ver = semverParse(npm_package_version)
+export async function GET({ url }) {
+    const ver = semverParse(npm_package_version);
+
+    const deviceData = {
+        os: { type: url.searchParams.get("os"), version: url.searchParams.get("osver") },
+        app: { version: url.searchParams.get("appver"), code: Number(url.searchParams.get("appvercode") ?? 0) },
+    };
+    let appVer: { name: string, code: number };
+    if (deviceData.app.code >= 86) {
+        switch (deviceData.os.type) {
+            case "ios": appVer = {
+                name: LATEST_KEPLER_APP_VERSION_NAME_IOS,
+                code: Number(LATEST_KEPLER_APP_VERSION_CODE_IOS),
+            };
+            case "android": appVer = {
+                name: LATEST_KEPLER_APP_VERSION_NAME_ANDROID,
+                code: Number(LATEST_KEPLER_APP_VERSION_CODE_ANDROID),
+            };
+            default: appVer = { name: deviceData.app.version ?? LATEST_KEPLER_APP_VERSION_NAME_ANDROID, code: deviceData.app.code };
+        }
+    } else {
+        appVer = {
+            name: LATEST_KEPLER_APP_VERSION_NAME_ANDROID,
+            code: Number(LATEST_KEPLER_APP_VERSION_CODE_ANDROID),
+        };
+    }
     return json(
         {
             service: "dyn_kepapp_data",
@@ -46,13 +70,10 @@ export async function GET() {
                 minor: ver?.minor,
                 patch: ver?.patch
             },
-            app_version: {
-                name: LATEST_KEPLER_APP_VERSION_NAME,
-                code: Number(LATEST_KEPLER_APP_VERSION_CODE)
-            },
+            app_version: appVer,
             services: {
                 sommerfest: {
-                    available: true
+                    available: false
                 }
             }
         }

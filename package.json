@@ -16,6 +16,7 @@
 		"@sveltejs/kit": "^2.16.0",
 		"@sveltejs/vite-plugin-svelte": "^5.0.0",
 		"@tailwindcss/vite": "^4.0.0",
+		"@types/bun": "^1.2.22",
 		"@types/semver": "^7.7.0",
 		"svelte": "^5.0.0",
 		"svelte-check": "^4.0.0",
